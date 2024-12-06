@@ -4,10 +4,26 @@
 
 #include "Player.h"
 
-Player::Player(int _healthPoints) {
-  healthPoints = _healthPoints;
+Player::Player(int _maxHealthPoints) {
+  maxHealthPoints = _maxHealthPoints;
+  currentHealthPoints = _maxHealthPoints;
 }
 
 int Player::getHealthPoints() {
-  return healthPoints;
+  return currentHealthPoints;
+}
+
+/*
+ * When currentHealthPoints <= 0, implement death functionality
+ */
+void Player::takeDamage(int _damage) {
+  currentHealthPoints -= _damage;
+}
+
+void Player::restoreHealthPoints(int _toRestore) {
+  if ((currentHealthPoints + _toRestore) > maxHealthPoints) {
+    currentHealthPoints = maxHealthPoints;
+  } else {
+   currentHealthPoints += _toRestore;
+  }
 }

@@ -9,10 +9,13 @@
 
 class Player {
 private:
-  int healthPoints;
+  int currentHealthPoints;
+  int maxHealthPoints;
 public:
-  explicit Player(int _healthPoints);
+  Player(int _maxHealthPoints);
   int getHealthPoints();
+  void takeDamage(int _damage);
+  void restoreHealthPoints(int _toRestore);
 };
 
 
