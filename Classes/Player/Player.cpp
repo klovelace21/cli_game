@@ -20,9 +20,28 @@ std::string Player::getName() {
   return name;
 }
 
-int* Player::getCurrentPosition() {
-  static int curPos[] = {row, column};
-  return curPos;
+int Player::getRow() {
+  return row;
+}
+
+int Player::getColumn() {
+  return column;
+}
+
+void Player::changeRow(int rowChangeVal) {
+  int desiredRow = row + rowChangeVal;
+  if (desiredRow < 0 || desiredRow > 9) {
+    return;
+  }
+  row = desiredRow;
+}
+
+void Player::changeColumn(int columnChangeVal) {
+  int desiredColumn = column + columnChangeVal;
+  if (desiredColumn < 0 || desiredColumn > 9) {
+    return;
+  }
+  column = desiredColumn;
 }
 
 /*

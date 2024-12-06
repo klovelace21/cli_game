@@ -20,7 +20,11 @@ public:
   void takeDamage(int _damage);
   void restoreHealthPoints(int _toRestore);
   std::string getName();
-  int* getCurrentPosition();
+  int getRow();
+  int getColumn();
+
+  void changeRow(int rowChangeVal);
+  void changeColumn(int columnChangeVal);
 };
 
 
