@@ -16,6 +16,7 @@ protected:
 
 public:
     virtual ~GamePiece();
+    GamePiece();
     GamePiece(const std::string &_name, int _maxHealthPoints);
 };
 
