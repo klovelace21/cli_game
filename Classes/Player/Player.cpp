@@ -7,15 +7,22 @@
 Player::Player(std::string _name, int _maxHealthPoints) {
   maxHealthPoints = _maxHealthPoints;
   currentHealthPoints = _maxHealthPoints;
+  row = 0;
+  column = 0;
   name = _name;
 }
 
-int Player::getHealthPoints() {
+int Player::getCurrentHealthPoints() {
   return currentHealthPoints;
 }
 
 std::string Player::getName() {
   return name;
+}
+
+int* Player::getCurrentPosition() {
+  static int curPos[] = {row, column};
+  return curPos;
 }
 
 /*
