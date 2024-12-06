@@ -15,6 +15,10 @@ protected:
 public:
   ~Character() override;
   Character(const std::string &_name, int _maxHealthPoints);
+  Character(int _row, int _column, const std::string &_name, int _maxHealthPoints);
+  int getCurrentHealthPoints() const;
+  virtual void takeDamage(int _damage);
+  virtual void restoreHealthPoints(int _toRestore);
 };
 
 

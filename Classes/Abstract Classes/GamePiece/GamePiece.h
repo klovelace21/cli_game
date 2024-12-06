@@ -15,7 +15,11 @@ protected:
 public:
     virtual ~GamePiece();
     GamePiece();
+    GamePiece(int _row, int _column, const std::string &_name);
     explicit GamePiece(const std::string &_name);
+    int getRow() const;
+    int getColumn() const;
+    std::string getName() const;
 };
 
 

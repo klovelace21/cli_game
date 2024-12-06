@@ -7,13 +7,8 @@
 Player::Player(const std::string &_name, int _maxHealthPoints)
   : Character(_name, _maxHealthPoints) {}
 
-int Player::getCurrentHealthPoints() const { return currentHealthPoints; }
-
-std::string Player::getName() { return name; }
-
-int Player::getRow() const { return row; }
-
-int Player::getColumn() const { return column; }
+Player::Player(int _row, int _col, const std::string &_name, int _maxHealthPoints)
+  : Character(_row, _col, _name, _maxHealthPoints) {}
 
 void Player::changeRow(int rowChangeVal) {
   int desiredRow = row + rowChangeVal;
