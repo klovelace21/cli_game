@@ -6,17 +6,21 @@
 #define GAMEPIECE_H
 
 
-
 class GamePiece {
 protected:
-  int row = 0;
-  int column = 0;
+    int row = 0;
+    int column = 0;
+    std::string name;
+    int maxHealthPoints;
+    int currentHealthPoints;
+
 public:
-
-  virtual ~GamePiece() = default;
-
+    virtual ~GamePiece();
+    GamePiece(const std::string &_name, int _maxHealthPoints);
 };
 
 
 
 #endif //GAMEPIECE_H
+
+

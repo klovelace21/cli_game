@@ -4,13 +4,10 @@
 
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "../Abstract Classes/GamePiece.h"
+#include "../Abstract Classes/GamePiece.cpp"
 
 class Player : public GamePiece {
-private:
-  int currentHealthPoints;
-  int maxHealthPoints;
-  std::string name{};
+
 public:
   Player(const std::string &_name, int _maxHealthPoints);
   int getCurrentHealthPoints () const;
