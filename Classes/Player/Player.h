@@ -11,11 +11,13 @@ class Player {
 private:
   int currentHealthPoints;
   int maxHealthPoints;
+  std::string name;
 public:
-  Player(int _maxHealthPoints);
+  Player(std::string _name, int _maxHealthPoints);
   int getHealthPoints();
   void takeDamage(int _damage);
   void restoreHealthPoints(int _toRestore);
+  std::string getName();
 };
 
 

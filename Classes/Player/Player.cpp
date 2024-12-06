@@ -4,13 +4,18 @@
 
 #include "Player.h"
 
-Player::Player(int _maxHealthPoints) {
+Player::Player(std::string _name, int _maxHealthPoints) {
   maxHealthPoints = _maxHealthPoints;
   currentHealthPoints = _maxHealthPoints;
+  name = _name;
 }
 
 int Player::getHealthPoints() {
   return currentHealthPoints;
+}
+
+std::string Player::getName() {
+  return name;
 }
 
 /*
