@@ -7,26 +7,16 @@
 Player::Player(std::string _name, int _maxHealthPoints) {
   maxHealthPoints = _maxHealthPoints;
   currentHealthPoints = _maxHealthPoints;
-  row = 0;
-  column = 0;
   name = _name;
 }
 
-int Player::getCurrentHealthPoints() {
-  return currentHealthPoints;
-}
+int Player::getCurrentHealthPoints() { return currentHealthPoints; }
 
-std::string Player::getName() {
-  return name;
-}
+std::string Player::getName() { return name; }
 
-int Player::getRow() {
-  return row;
-}
+int Player::getRow() { return row; }
 
-int Player::getColumn() {
-  return column;
-}
+int Player::getColumn() { return column; }
 
 void Player::changeRow(int rowChangeVal) {
   int desiredRow = row + rowChangeVal;
