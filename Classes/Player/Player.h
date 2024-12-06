@@ -10,15 +10,15 @@ class Player : public GamePiece {
 private:
   int currentHealthPoints;
   int maxHealthPoints;
-  std::string name;
+  std::string name{};
 public:
-  Player(std::string _name, int _maxHealthPoints);
-  int getCurrentHealthPoints();
+  Player(const std::string &_name, int _maxHealthPoints);
+  int getCurrentHealthPoints () const;
   void takeDamage(int _damage);
   void restoreHealthPoints(int _toRestore);
   std::string getName();
-  int getRow();
-  int getColumn();
+  int getRow () const;
+  int getColumn() const;
 
   void changeRow(int rowChangeVal);
   void changeColumn(int columnChangeVal);

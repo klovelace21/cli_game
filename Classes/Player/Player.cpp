@@ -4,19 +4,19 @@
 
 #include "Player.h"
 
-Player::Player(std::string _name, int _maxHealthPoints) {
+Player::Player(const std::string &_name, int _maxHealthPoints) {
   maxHealthPoints = _maxHealthPoints;
   currentHealthPoints = _maxHealthPoints;
   name = _name;
 }
 
-int Player::getCurrentHealthPoints() { return currentHealthPoints; }
+int Player::getCurrentHealthPoints() const { return currentHealthPoints; }
 
 std::string Player::getName() { return name; }
 
-int Player::getRow() { return row; }
+int Player::getRow() const { return row; }
 
-int Player::getColumn() { return column; }
+int Player::getColumn() const { return column; }
 
 void Player::changeRow(int rowChangeVal) {
   int desiredRow = row + rowChangeVal;

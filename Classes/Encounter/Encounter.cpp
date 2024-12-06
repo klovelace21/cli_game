@@ -4,12 +4,9 @@
 
 #include "Encounter.h"
 
-Encounter::Encounter(std::string _name) {
+Encounter::Encounter(const std::string &_name, int _health) {
   name = _name;
-}
-
-Encounter::Encounter() {
-  name = "jerry";
+  health = _health;
 }
 
 std::string Encounter::getName() {
