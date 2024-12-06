@@ -4,20 +4,18 @@
 
 #ifndef GAMEPIECE_H
 #define GAMEPIECE_H
-
+#include <string>
 
 class GamePiece {
 protected:
     int row = 0;
     int column = 0;
     std::string name;
-    int maxHealthPoints;
-    int currentHealthPoints;
 
 public:
     virtual ~GamePiece();
     GamePiece();
-    GamePiece(const std::string &_name, int _maxHealthPoints);
+    explicit GamePiece(const std::string &_name);
 };
 
 

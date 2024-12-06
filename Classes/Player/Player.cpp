@@ -5,7 +5,7 @@
 #include "Player.h"
 
 Player::Player(const std::string &_name, int _maxHealthPoints)
-  : GamePiece(_name, _maxHealthPoints) { }
+  : Character(_name, _maxHealthPoints) {}
 
 int Player::getCurrentHealthPoints() const { return currentHealthPoints; }
 

@@ -4,9 +4,9 @@
 
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "../Abstract Classes/GamePiece.cpp"
+#include "../Abstract Classes/Character/Character.cpp"
 
-class Player : public GamePiece {
+class Player : public Character {
 
 public:
   Player(const std::string &_name, int _maxHealthPoints);
