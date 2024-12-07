@@ -4,11 +4,12 @@
 
 #include "Player.h"
 
+
 Player::Player(const std::string &_name, int _maxHealthPoints)
   : Character(_name, _maxHealthPoints) {}
 
-Player::Player(int _row, int _col, const std::string &_name, int _maxHealthPoints)
-  : Character(_row, _col, _name, _maxHealthPoints) {}
+Player::Player(int _row, int _column, const std::string &_name, int _maxHealthPoints)
+  : Character(_row, _column, _name, _maxHealthPoints) {}
 
 void Player::changeRow(int rowChangeVal) {
   int desiredRow = row + rowChangeVal;

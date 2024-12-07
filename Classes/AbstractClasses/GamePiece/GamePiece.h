@@ -13,7 +13,7 @@ protected:
     std::string name;
 
 public:
-    virtual ~GamePiece();
+    virtual ~GamePiece() = default;
     GamePiece();
     GamePiece(int _row, int _column, const std::string &_name);
     explicit GamePiece(const std::string &_name);

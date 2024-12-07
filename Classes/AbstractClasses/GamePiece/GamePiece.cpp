@@ -3,11 +3,7 @@
 //
 #include "GamePiece.h"
 
-
-GamePiece::~GamePiece() = default;
-
-GamePiece::GamePiece() = default;
-
+GamePiece::GamePiece() : row(0), column(0) {}
 GamePiece::GamePiece(int _row, int _column, const std::string &_name)
     : row(_row), column(_column), name(_name) {}
 

@@ -4,8 +4,8 @@
 
 #ifndef CHARACTER_H
 #define CHARACTER_H
-#include <string>
-#include "../GamePiece/GamePiece.cpp"
+
+#include "../GamePiece/GamePiece.h"
 
 class Character : public GamePiece {
 protected:
@@ -13,12 +13,12 @@ protected:
   int currentHealthPoints;
 
 public:
-  ~Character() override;
+  virtual ~Character() = default;
   Character(const std::string &_name, int _maxHealthPoints);
   Character(int _row, int _column, const std::string &_name, int _maxHealthPoints);
   int getCurrentHealthPoints() const;
-  virtual void takeDamage(int _damage);
-  virtual void restoreHealthPoints(int _toRestore);
+  virtual void takeDamage(int _damage) = 0;
+  virtual void restoreHealthPoints(int _toRestore) = 0;
 };
 
 
