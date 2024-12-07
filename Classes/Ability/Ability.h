@@ -13,8 +13,9 @@ private:
   int damage;
 public:
   Ability();
-  Ability(std::string _name, int _damage);
+  Ability(const std::string &_name, int _damage);
   std::string getName() const;
+  std::string toString() const;
   int getDamage() const;
 
 };

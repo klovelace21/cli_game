@@ -4,9 +4,14 @@
 
 #include "Ability.h"
 Ability::Ability() : name("Basic Attack"), damage(10) {}
-Ability::Ability(std::string _name, int _damage)
+Ability::Ability(const std::string &_name, int _damage)
     : name(_name), damage(_damage) {}
+
+std::string Ability::getName() const { return name; }
 
 int Ability::getDamage() const { return damage; }
 
-std::string Ability::getName() const { return name; }
+std::string Ability::toString() const {
+
+    return getName() + ": " + std::to_string(getDamage()) + " damage";
+}
