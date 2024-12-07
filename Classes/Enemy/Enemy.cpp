@@ -7,14 +7,14 @@
 Enemy::Enemy(int _row, int _column, const std::string &_name, int _maxHealthPoints)
   : Character(_row, _column, _name, _maxHealthPoints) {}
 
-void Enemy::takeDamage(int _damage) {
-  currentHealthPoints -= _damage;
+void Enemy::takeDamage(int damage) {
+  currentHealthPoints -= damage;
 }
 
-void Enemy::restoreHealthPoints(int _toRestore) {
-  if ((currentHealthPoints + _toRestore) > maxHealthPoints) {
+void Enemy::restoreHealthPoints(int toRestore) {
+  if ((currentHealthPoints + toRestore) > maxHealthPoints) {
     currentHealthPoints = maxHealthPoints;
   } else {
-    currentHealthPoints += _toRestore;
+    currentHealthPoints += toRestore;
   }
 }

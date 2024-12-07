@@ -10,8 +10,8 @@
 class Enemy : public Character {
 public:
   Enemy(int _row, int _column, const std::string &_name, int _maxHealthPoints);
-  void takeDamage(int _damage) override;
-  void restoreHealthPoints(int _toRestore) override;
+  void takeDamage(int damage) override;
+  void restoreHealthPoints(int toRestore) override;
 
 };
 

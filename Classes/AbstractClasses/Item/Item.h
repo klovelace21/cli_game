@@ -8,6 +8,9 @@
 
 class Item : public GamePiece {
 public:
+  virtual ~Item() = default;
+  Item();
+  Item(int _row, int _column, const std::string &_name);
 
 };
 

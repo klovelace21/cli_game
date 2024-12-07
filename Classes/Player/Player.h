@@ -11,10 +11,10 @@ public:
   Player(const std::string &_name, int _maxHealthPoints);
   Player(int _row, int _column, const std::string &_name, int _maxHealthPoints);
 
-  void takeDamage(int _damage) override;
-  void restoreHealthPoints(int _toRestore) override;
-  void changeRow(int rowChangeVal);
-  void changeColumn(int columnChangeVal);
+  void takeDamage(int damage) override;
+  void restoreHealthPoints(int toRestore) override;
+  void changeRow(int changeBy);
+  void changeColumn(int changeBy);
 };
 
 

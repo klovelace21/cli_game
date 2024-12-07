@@ -11,15 +11,17 @@ class Character : public GamePiece {
 protected:
   int maxHealthPoints;
   int currentHealthPoints;
-
+  Ability abilities[4];
 public:
   virtual ~Character() = default;
+
   Character(const std::string &_name, int _maxHealthPoints);
   Character(int _row, int _column, const std::string &_name, int _maxHealthPoints);
+
   int getCurrentHealthPoints() const;
-  Ability abilities[4];
-  virtual void takeDamage(int _damage) = 0;
-  virtual void restoreHealthPoints(int _toRestore) = 0;
+
+  virtual void takeDamage(int damage) = 0;
+  virtual void restoreHealthPoints(int toRestore) = 0;
 
 };
 
