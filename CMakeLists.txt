@@ -8,5 +8,6 @@ add_executable(cli_game main.cpp
         Classes/AbstractClasses/GamePiece/GamePiece.cpp
         Classes/AbstractClasses/Character/Character.cpp
         Classes/Enemy/Enemy.cpp
-        Classes/Ability/Ability.cpp)
+        Classes/Ability/Ability.cpp
+        Classes/AbstractClasses/Item/Item.cpp)
 
