@@ -8,8 +8,8 @@
 
 class GamePiece {
 protected:
-    int row = 0;
-    int column = 0;
+    int row;
+    int column;
     std::string name;
 
 public:
