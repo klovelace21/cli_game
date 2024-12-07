@@ -3,3 +3,5 @@
 //
 
 #include "Item.h"
+
+Item::Item(int _row, int _column, const std::string &_name) : GamePiece(_row, _column, _name) {}
