@@ -7,6 +7,8 @@
 
 #include "../GamePiece/GamePiece.h"
 #include "../../Ability/Ability.h"
+#include <stdexcept>
+
 class Character : public GamePiece {
 protected:
   int maxHealthPoints;
@@ -14,15 +16,15 @@ protected:
   Ability abilities[4];
 public:
   virtual ~Character() = default;
+  virtual void takeDamage(int damage) = 0;
+  virtual void restoreHealthPoints(int toRestore) = 0;
 
   Character(const std::string &_name, int _maxHealthPoints);
   Character(int _row, int _column, const std::string &_name, int _maxHealthPoints);
 
   int getCurrentHealthPoints() const;
-
-  virtual void takeDamage(int damage) = 0;
-  virtual void restoreHealthPoints(int toRestore) = 0;
-
+  Ability getAbility(int idx);
+  void setAbility(const Ability &newAbility, int idx);
 };
 
 

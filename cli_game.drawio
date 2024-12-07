@@ -1,6 +1,6 @@
-<mxfile host="drawio-plugin" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2024-12-07T23:06:08.200Z" version="22.1.22" etag="wmiPYVe4qAKnpNMbEmIx" type="embed">
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2024-12-07T23:11:20.625Z" version="22.1.22" etag="aLvJeo7mXiF-D3rsm-kY" type="embed">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1193" dy="672" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="818" dy="461" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -17,7 +17,7 @@
           <mxGeometry y="88" width="260" height="152" as="geometry" />
         </mxCell>
         <mxCell id="4" value="Character : GamePiece" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="240" y="380" width="360" height="220" as="geometry" />
+          <mxGeometry x="240" y="380" width="360" height="240" as="geometry" />
         </mxCell>
         <mxCell id="5" value="- Integer: maxHealthPoints&lt;br&gt;- Integer: currentHealthPoints&lt;br&gt;- Array: Ability abilities[4]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4">
           <mxGeometry y="26" width="360" height="54" as="geometry" />
@@ -25,8 +25,8 @@
         <mxCell id="6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4">
           <mxGeometry y="80" width="360" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="- virtual ~Character()&lt;br&gt;&lt;br&gt;- Character(&amp;nbsp; _name,&amp;nbsp; _maxHealthPoints )&lt;br&gt;- Character( _row,&amp;nbsp; _column,&amp;nbsp; _name,&amp;nbsp; _maxHealthPoints )&lt;br&gt;&lt;br&gt;- getCurrentHealthPoints() const -&amp;gt; Integer&lt;br&gt;- virtual takeDamage( damage ) -&amp;gt; void&lt;br&gt;- virtual restoreHealthPoints( toRestore ) -&amp;gt; void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4">
-          <mxGeometry y="88" width="360" height="132" as="geometry" />
+        <mxCell id="7" value="- virtual ~Character()&lt;br&gt;- virtual takeDamage( damage ) -&amp;gt; void&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- virtual restoreHealthPoints( toRestore ) -&amp;gt; void&lt;br&gt;&lt;br&gt;- Character(&amp;nbsp; _name,&amp;nbsp; _maxHealthPoints )&lt;br&gt;- Character( _row,&amp;nbsp; _column,&amp;nbsp; _name,&amp;nbsp; _maxHealthPoints )&lt;br&gt;&lt;br&gt;- getCurrentHealthPoints() const -&amp;gt; Integer&lt;br&gt;- void setAbility( Ability newAbility, int idx )" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry y="88" width="360" height="152" as="geometry" />
         </mxCell>
         <mxCell id="10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.497;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3" target="4">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -40,7 +40,7 @@
         <mxCell id="15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="13">
           <mxGeometry y="26" width="320" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="16" value="- Player( _name, _maxHealthPoints )&lt;br&gt;- Player( _row, _column, _name, _maxHealthPoints )&lt;br&gt;&lt;br&gt;- takeDamage( damage ) override -&amp;gt; void&lt;br&gt;- restoreHealthPoints( toRestore ) override -&amp;gt; void&lt;br&gt;&lt;br&gt;- changeRow( changeBy ) -&amp;gt; void&lt;br&gt;- changeColumn ( changeBy ) -&amp;gt; void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="13">
+        <mxCell id="16" value="- Player( _name, _maxHealthPoints )&lt;br&gt;- Player( _row, _column, _name, _maxHealthPoints )&lt;br&gt;&lt;br&gt;- takeDamage( damage ) override -&amp;gt; void&lt;br&gt;- restoreHealthPoints( toRestore ) override -&amp;gt; void&lt;br&gt;&lt;br&gt;- changeRow( int changeBy ) -&amp;gt; void&lt;br&gt;- changeColumn ( int changeBy ) -&amp;gt; void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="13">
           <mxGeometry y="34" width="320" height="126" as="geometry" />
         </mxCell>
         <mxCell id="17" value="Enemy : Character" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -49,7 +49,7 @@
         <mxCell id="19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="17">
           <mxGeometry y="26" width="320" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="20" value="- Enemy( _row, _column, _name, _maxHealthPoints )&lt;br&gt;&lt;br&gt;- takeDamage( damage ) override -&amp;gt; void&lt;br&gt;- restoreHealthPoints( toRestore ) override -&amp;gt; void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="17">
+        <mxCell id="20" value="- Enemy( _row, _column, _name, _maxHealthPoints )&lt;br&gt;&lt;br&gt;- takeDamage( int damage ) override -&amp;gt; void&lt;br&gt;- restoreHealthPoints( int toRestore ) override -&amp;gt; void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="17">
           <mxGeometry y="34" width="320" height="66" as="geometry" />
         </mxCell>
         <mxCell id="21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.459;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="7" target="13">
