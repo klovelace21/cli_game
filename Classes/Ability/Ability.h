@@ -12,6 +12,7 @@ private:
   std::string name;
   int damage;
 public:
+  Ability();
   Ability(std::string _name, int _damage);
   std::string getName() const;
   int getDamage() const;
