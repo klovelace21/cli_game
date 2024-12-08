@@ -4,9 +4,13 @@
 
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "../AbstractClasses/Character/Character.h"
-class Player : public Character {
+#include <vector>
 
+#include "../AbstractClasses/Character/Character.h"
+#include "../AbstractClasses/Item/Item.h"
+class Player : public Character {
+private:
+  std::vector<Item*> items;
 public:
   Player(const std::string &_name, int _maxHealthPoints);
   Player(int _row, int _column, const std::string &_name, int _maxHealthPoints);
