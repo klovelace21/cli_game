@@ -13,6 +13,7 @@ public:
 
   void takeDamage(int damage) override;
   void restoreHealthPoints(int toRestore) override;
+
   void changeRow(int changeBy);
   void changeColumn(int changeBy);
 };

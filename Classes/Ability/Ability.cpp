@@ -12,6 +12,5 @@ std::string Ability::getName() const { return name; }
 int Ability::getDamage() const { return damage; }
 
 std::string Ability::toString() const {
-
     return getName() + ": " + std::to_string(getDamage()) + " damage";
 }
