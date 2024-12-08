@@ -25,6 +25,7 @@ public:
   int getCurrentHealthPoints() const;
   Ability getAbility(int idx);
   void setAbility(const Ability &newAbility, int idx);
+  void useAbility(int idx, Character *character);
 };
 
 

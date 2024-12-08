@@ -20,6 +20,11 @@ Character::Character(int _row, int _column, const std::string &_name, int _maxHe
 
 int Character::getCurrentHealthPoints() const { return currentHealthPoints; }
 
+void Character::useAbility(int idx, Character *character) {
+    checkIfValidIndex(idx);
+    character->takeDamage(this->getAbility(idx).getDamage());
+}
+
 Ability Character::getAbility(int idx) {
     checkIfValidIndex(idx);
     return abilities[idx];
