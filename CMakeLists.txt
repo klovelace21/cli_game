@@ -10,5 +10,6 @@ add_executable(cli_game main.cpp
         Classes/Enemy/Enemy.cpp
         Classes/Ability/Ability.cpp
         Classes/AbstractClasses/Item/Item.cpp
-        Classes/Consumable/Consumable.cpp)
+        Classes/Consumable/Consumable.cpp
+        Classes/AbilityBook/AbilityBook.cpp)
 
