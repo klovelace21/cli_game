@@ -22,6 +22,21 @@ Character* GameManager::handleBattle(Character* c1, Character* c2) {
   return c1;
 }
 
+void GameManager::handleItemEncounter(Player* player, Item* item) {
+  std::cout << "Would you like to add the " << item->getName() << " to your bag?" << std::endl;
+  std::cout << "Effect: " << item->getEffect() << std::endl;
+  std::cout << "1. Yes" << "   " << "2. No" << std::endl;
+  int choice;
+  std::cin >> choice;
+  std::cout << choice << std::endl;
+  if (choice == 1) {
+    player->addItem(item);
+    return;
+  }
+
+  std::cout << "Item not added" << std::endl;
+}
+
 bool winnerExists(Character* c1, Character* c2) {
   if (c1->getCurrentHealthPoints() > 0 && c2->getCurrentHealthPoints() > 0)
     return false;

@@ -12,8 +12,9 @@
 class GameManager {
 public:
   GameManager();
-  static Character* handleBattle(Character* c1, Character* c2);
 
+  static Character* handleBattle(Character* c1, Character* c2);
+  static void handleItemEncounter(Player* player, Item* item);
 };
 
 
