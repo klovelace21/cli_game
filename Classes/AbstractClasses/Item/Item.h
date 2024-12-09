@@ -9,6 +9,7 @@
 class Item : public GamePiece {
 public:
   virtual ~Item() = default;
+  virtual std::string getEffect() const = 0;
   Item(int _row, int _column, const std::string &_name);
 
 };

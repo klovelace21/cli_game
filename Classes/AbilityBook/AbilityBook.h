@@ -13,6 +13,7 @@ private:
   Ability* toLearn;
 public:
   AbilityBook(int _row, int _column, Ability* _toLearn);
+  std::string getEffect() const override;
 };
 
 

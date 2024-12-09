@@ -13,7 +13,7 @@ private:
  int buffAmount;
 public:
   Consumable(int _row, int _column, const std::string &_name, const std::string &_buffType, int _buffAmount);
-
+  std::string getEffect() const override;
 };
 
 
