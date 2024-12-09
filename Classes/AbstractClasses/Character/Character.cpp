@@ -4,11 +4,7 @@
 
 #include "Character.h"
 
-void checkIfValidIndex(int idx) {
-    if (idx < 0 || idx > 4) {
-        throw std::invalid_argument("Invalid Ability Index");
-    }
-}
+
 
 Character::Character(const std::string &_name, int _maxHealthPoints)
     : GamePiece(_name),
@@ -25,8 +21,14 @@ void Character::useAbility(int idx, Character *character) {
     character->takeDamage(this->getAbility(idx).getDamage());
 }
 
+void Character::checkIfValidIndex(int idx) const {
+    if (idx < 0 || idx > 3)
+        throw std::invalid_argument("Invalid Ability Index");
+
+}
+
 Ability Character::getAbility(int idx) {
-    checkIfValidIndex(idx);
+    this->checkIfValidIndex(idx);
     return abilities[idx];
 }
 

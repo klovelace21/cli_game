@@ -25,7 +25,8 @@ int Player::chooseAbility() {
   std::cin >> choice;
 
   // Decrement choice by 1 to return index of ability choice
-  return --choice;
+  this->checkIfValidIndex(--choice);
+  return choice;
 
 }
 

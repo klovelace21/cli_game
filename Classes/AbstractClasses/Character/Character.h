@@ -13,6 +13,9 @@ protected:
   int maxHealthPoints;
   int currentHealthPoints;
   Ability abilities[4];
+
+  void checkIfValidIndex(int idx) const;
+
 public:
   virtual ~Character() = default;
   virtual void takeDamage(int damage) = 0;
