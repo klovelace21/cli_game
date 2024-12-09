@@ -18,3 +18,7 @@ void Enemy::restoreHealthPoints(int toRestore) {
     currentHealthPoints += toRestore;
   }
 }
+
+int Enemy::chooseAbility() {
+  return 1;
+}
