@@ -21,6 +21,7 @@ public:
 
   void changeRow(int changeBy);
   void changeColumn(int changeBy);
+  void addItem(Item* item);
 };
 
 

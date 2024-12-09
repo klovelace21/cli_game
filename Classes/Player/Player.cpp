@@ -60,3 +60,10 @@ void Player::restoreHealthPoints(int toRestore) {
    currentHealthPoints += toRestore;
   }
 }
+
+void Player::addItem(Item* item) {
+  items.push_back(item);
+  for (Item* item : items) {
+    std::cout << item->getName() << std::endl;
+  }
+}
