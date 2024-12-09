@@ -18,7 +18,7 @@ int Character::getCurrentHealthPoints() const { return currentHealthPoints; }
 
 void Character::useAbility(int idx, Character *character) {
     checkIfValidIndex(idx);
-    character->takeDamage(this->getAbility(idx).getDamage());
+    character->takeDamage(this->getAbility(idx)->getDamage());
 }
 
 void Character::checkIfValidIndex(int idx) const {
@@ -27,9 +27,9 @@ void Character::checkIfValidIndex(int idx) const {
 
 }
 
-Ability Character::getAbility(int idx) {
+Ability* Character::getAbility(int idx) {
     this->checkIfValidIndex(idx);
-    return abilities[idx];
+    return &abilities[idx];
 }
 
 void Character::setAbility(const Ability &newAbility, int idx) {
