@@ -8,6 +8,7 @@
 #include "../AbstractClasses/Character/Character.h"
 #include "../Player/Player.h"
 #include "../Enemy/Enemy.h"
+#include  <string>
 class GameManager {
 public:
   GameManager();
