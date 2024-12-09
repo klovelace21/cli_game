@@ -7,8 +7,12 @@
 
 #include "../AbstractClasses/Character/Character.h"
 #include "../Player/Player.h"
+#include <set>
 using namespace std;
 class GameManager {
+private:
+  static set<tuple<int, int>> visited;
+
 public:
   GameManager();
 
