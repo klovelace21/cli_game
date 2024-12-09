@@ -20,5 +20,5 @@ void Enemy::restoreHealthPoints(int toRestore) {
 }
 
 int Enemy::chooseAbility() {
-  return 1;
+  return rand() % 4;
 }
