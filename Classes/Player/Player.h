@@ -6,8 +6,10 @@
 #define PLAYER_H
 #include <vector>
 #include <iostream>
+#include <map>
 #include "../AbstractClasses/Character/Character.h"
 #include "../AbstractClasses/Item/Item.h"
+using namespace std;
 class Player : public Character {
 private:
   std::vector<Item*> items;
@@ -22,6 +24,7 @@ public:
   void changeRow(int changeBy);
   void changeColumn(int changeBy);
   void addItem(Item* item);
+  Item* chooseItemOutOfCombat();
 };
 
 

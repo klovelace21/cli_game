@@ -11,18 +11,41 @@ Player::Player(const std::string &_name, int _maxHealthPoints)
 Player::Player(int _row, int _column, const std::string &_name, int _maxHealthPoints)
   : Character(_row, _column, _name, _maxHealthPoints) {}
 
+Item* Player::chooseItemOutOfCombat() {
+  cout << "Which Item would you like to use?" << endl;
+  map<int, Item*>* usable = new map<int, Item*>();
+  int idxCounter = 1;
+  // Add usable items to usable map
+  for (int i = 0; i < items.size(); i++) {
+    Item** itemPtr = &items.at(i);
+    if (items.at(i)->isUsableOutOfCombat()) {
+      usable->insert({idxCounter, *itemPtr});
+      cout << std::to_string(idxCounter++) << ". " << items.at(i)->getName() << "   ";
+      if (idxCounter % 2 != 0) {
+        cout << std::endl;
+      }
+    }
+  }
+  int choice;
+  cout << "\n";
+  cin >> choice;
+  Item* toUse = usable->at(choice);
+  delete usable;
+  return toUse;
+}
+
 int Player::chooseAbility() {
-  std::cout << "Which ability would you like to use?" << std::endl;
+  cout << "Which ability would you like to use?" << endl;
   for (int i = 0; i < sizeof(abilities) / sizeof(abilities[0]); i++) {
-    std::cout << i + 1 << ". " << abilities[0].toString() << "   ";
+    cout << i + 1 << ". " << abilities[0].toString() << "   ";
 
     if (i % 2 != 0)
-      std::cout << std::endl;
+      cout << std::endl;
 
   }
 
   int choice;
-  std::cin >> choice;
+  cin >> choice;
 
   // Decrement choice by 1 to return index of ability choice
   this->checkIfValidIndex(--choice);
