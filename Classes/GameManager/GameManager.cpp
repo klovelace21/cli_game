@@ -7,6 +7,8 @@ bool winnerExists(Character* c1, Character* c2);
 void attack(Character* attacker, Character* target);
 void printBoard(Player* player);
 void promptPlayerChoice(Player* player);
+void displayMoveOptions();
+void playerMove(Player* player);
 GameManager::GameManager() {}
 
 void GameManager::startTurn(Player* player) {
@@ -74,13 +76,15 @@ void promptPlayerChoice(Player* player) {
   cin >> choice;
   switch (choice) {
     case 1:
-      cout << "You move" << endl;
+      playerMove(player);
+      printBoard(player);
     break;
     case 2:
       cout << "Use Ability" << endl;
     break;
     case 3:
       cout << "Use Item" << endl;
+      player->chooseItemOutOfCombat();
     break;
     case 4:
       cout << "Print Board" << endl;
@@ -90,5 +94,38 @@ void promptPlayerChoice(Player* player) {
     default:
       cout << "Invalid Choice" << endl;
       promptPlayerChoice(player);
+  }
+}
+
+void displayMoveOptions() {
+  cout << "Where would you like to move?" << endl;
+  cout << "Pick a direction:" << endl;
+  cout << "1. Up" << "     " << "2. Down" << endl;
+  cout << "3. Left" << "   " << "4. Right" << endl;
+}
+
+void playerMove(Player* player) {
+  printBoard(player);
+  displayMoveOptions();
+  int choice;
+  cout << "\n";
+  cin >> choice;
+
+  switch (choice) {
+    case 1:
+      player->changeRow(-1);
+    break;
+    case 2:
+      player->changeRow(1);
+    break;
+    case 3:
+      player->changeColumn(-1);
+    break;
+    case 4:
+      player->changeColumn(1);
+    break;
+    default:
+      cout << "Invalid Choice" << endl;
+      playerMove(player);
   }
 }

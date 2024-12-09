@@ -21,6 +21,4 @@ public:
   static void handleItemEncounter(Player* player, Item* item);
 };
 
-
-
 #endif //GAMEMANAGER_H
