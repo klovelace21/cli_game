@@ -55,7 +55,9 @@ int Player::chooseAbility() {
 
 void Player::changeRow(int changeBy) {
   int desiredRow = row + changeBy;
-  if (desiredRow < 0 || desiredRow > 9) {
+  int maxRow = Globals::BOARD_HEIGHT - 1;
+
+  if (desiredRow < 0 || desiredRow > maxRow) {
     return;
   }
   row = desiredRow;
@@ -63,7 +65,9 @@ void Player::changeRow(int changeBy) {
 
 void Player::changeColumn(int changeBy) {
   int desiredColumn = column + changeBy;
-  if (desiredColumn < 0 || desiredColumn > 9) {
+  int maxColumn = Globals::BOARD_WIDTH - 1;
+
+  if (desiredColumn < 0 || desiredColumn > maxColumn) {
     return;
   }
   column = desiredColumn;

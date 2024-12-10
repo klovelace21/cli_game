@@ -7,6 +7,7 @@
 
 #include "../GamePiece/GamePiece.h"
 #include "../../Ability/Ability.h"
+#include "../../../Globals/Globals.h"
 #include <stdexcept>
 class Character : public GamePiece {
 protected:
