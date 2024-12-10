@@ -13,6 +13,7 @@ add_executable(cli_game main.cpp
         Classes/Consumable/Consumable.cpp
         Classes/AbilityBook/AbilityBook.cpp
         Classes/GameManager/GameManager.cpp
+        Classes/Exit/Exit.cpp
         Globals/Globals.cpp)
 
 
