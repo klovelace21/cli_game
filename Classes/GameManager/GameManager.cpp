@@ -126,3 +126,28 @@ void GameManager::playerMove(Player* player) {
       cout << "Invalid Choice" << endl;
   }
 }
+
+void GameManager::seed(Player* player, Exit* exit) {
+  board[0][0] = player;
+  board[exit->getRow()][exit->getColumn()] = exit;
+  for (int i = 0; i < Globals::BOARD_HEIGHT; i++) {
+    for (int j = 0; j < Globals::BOARD_WIDTH; j++) {
+      if (i == player->getRow() && j == player->getColumn()) {
+        continue;
+      }
+      if (i == exit->getRow() && j == exit->getColumn()) {
+        continue;
+      }
+      Enemy* enemy = new Enemy(i,j, "Gorlock", 15);
+      board[i][j] = enemy;
+    }
+  }
+
+  for (int i = 0; i < Globals::BOARD_HEIGHT; i++) {
+    for (int j = 0; j < Globals::BOARD_WIDTH; j++) {
+
+      cout << board[i][j]->getName() << endl;
+
+    }
+  }
+}

@@ -7,11 +7,14 @@
 
 #include "../AbstractClasses/Character/Character.h"
 #include "../Player/Player.h"
+#include "../Exit/Exit.h"
+#include "../Enemy/Enemy.h"
 #include "../../Globals/Globals.h"
 #include <set>
 using namespace std;
 class GameManager {
 private:
+  inline static GamePiece* board[10][10];
   inline static set<tuple<int, int>> visited;
 
 public:
@@ -26,6 +29,7 @@ public:
   static void displayMoveOptions();
   static bool winnerExists(const Character* c1, const Character* c2);
   static void attack(Character* attacker, Character* target);
+  static void seed(Player* player, Exit* exit);
 
 };
 
