@@ -50,8 +50,8 @@ void GameManager::attack(Character* attacker, Character* target) {
 }
 
 void GameManager::printBoard(const Player* player) {
-  for(int i = 0; i < 9; i++) {
-    for (int j = 0; j < 9; j++) {
+  for(int i = 0; i < Globals::BOARD_HEIGHT; i++) {
+    for (int j = 0; j < Globals::BOARD_WIDTH; j++) {
       if (i == player->getRow() && j == player->getColumn()) {
         cout << " X ";
         continue;

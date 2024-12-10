@@ -7,6 +7,7 @@
 
 #include "../AbstractClasses/Character/Character.h"
 #include "../Player/Player.h"
+#include "../../Globals/Globals.h"
 #include <set>
 using namespace std;
 class GameManager {
@@ -25,6 +26,7 @@ public:
   static void displayMoveOptions();
   static bool winnerExists(const Character* c1, const Character* c2);
   static void attack(Character* attacker, Character* target);
+
 };
 
 #endif //GAMEMANAGER_H
