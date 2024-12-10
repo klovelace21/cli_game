@@ -3,12 +3,6 @@
 //
 
 #include "GameManager.h"
-bool winnerExists(Character* c1, Character* c2);
-void attack(Character* attacker, Character* target);
-void printBoard(Player* player);
-void promptPlayerChoice(Player* player);
-void displayMoveOptions();
-void playerMove(Player* player);
 GameManager::GameManager() {}
 
 void GameManager::startTurn(Player* player) {
@@ -44,31 +38,35 @@ void GameManager::handleItemEncounter(Player* player, Item* item) {
   cout << "Item not added" << endl;
 }
 
-bool winnerExists(Character* c1, Character* c2) {
+bool GameManager::winnerExists(const Character* c1, const Character* c2) {
   if (c1->getCurrentHealthPoints() > 0 && c2->getCurrentHealthPoints() > 0)
     return false;
   return true;
 }
 
-void attack(Character* attacker, Character* target) {
+void GameManager::attack(Character* attacker, Character* target) {
   Ability* abilityToUse = attacker->getAbility(attacker->chooseAbility());
   target->takeDamage(abilityToUse->getDamage());
 }
 
-void printBoard(Player* player) {
+void GameManager::printBoard(const Player* player) {
   for(int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       if (i == player->getRow() && j == player->getColumn()) {
         cout << " X ";
         continue;
       }
-      cout << " \u2713 ";
+      if (visited.contains(make_tuple(i, j))) {
+        cout << " \u2713 ";
+      } else {
+        cout << " ? ";
+      }
     }
     cout << endl;
   }
 }
 
-void promptPlayerChoice(Player* player) {
+void GameManager::promptPlayerChoice(Player* player) {
   cout << "What would you like to do?" << endl;
   cout << "1. Move" << "       " << "2. Use Ability" << endl;
   cout << "3. Use Item" << "   " << "4. Print Board" << endl;
@@ -97,20 +95,20 @@ void promptPlayerChoice(Player* player) {
   }
 }
 
-void displayMoveOptions() {
+void GameManager::displayMoveOptions() {
   cout << "Where would you like to move?" << endl;
   cout << "Pick a direction:" << endl;
   cout << "1. Up" << "     " << "2. Down" << endl;
   cout << "3. Left" << "   " << "4. Right" << endl;
 }
 
-void playerMove(Player* player) {
+void GameManager::playerMove(Player* player) {
   printBoard(player);
   displayMoveOptions();
   int choice;
   cout << "\n";
   cin >> choice;
-
+  visited.insert(make_tuple(player->getRow(), player->getColumn()));
   switch (choice) {
     case 1:
       player->changeRow(-1);
@@ -126,6 +124,5 @@ void playerMove(Player* player) {
     break;
     default:
       cout << "Invalid Choice" << endl;
-      playerMove(player);
   }
 }

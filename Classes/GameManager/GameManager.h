@@ -11,7 +11,7 @@
 using namespace std;
 class GameManager {
 private:
-  static set<tuple<int, int>> visited;
+  inline static set<tuple<int, int>> visited;
 
 public:
   GameManager();
@@ -19,6 +19,12 @@ public:
   static void startTurn(Player* player);
   static Character* handleBattle(Character* c1, Character* c2);
   static void handleItemEncounter(Player* player, Item* item);
+  static void playerMove(Player* player);
+  static void printBoard(const Player* player);
+  static void promptPlayerChoice(Player* player);
+  static void displayMoveOptions();
+  static bool winnerExists(const Character* c1, const Character* c2);
+  static void attack(Character* attacker, Character* target);
 };
 
 #endif //GAMEMANAGER_H
