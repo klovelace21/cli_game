@@ -5,12 +5,17 @@
 #ifndef GAMEPIECEGENERATOR_H
 #define GAMEPIECEGENERATOR_H
 #include <string>
-#include "../AbstractClasses/GamePiece/GamePiece.h"
+#include <iostream>
+#include "../Enemy/Enemy.h"
 class GamePieceGenerator {
-  const static std::string names[30];
-  const static std::string epithets[30];
+  static std::string names[30];
+  static std::string epithets[30];
+
 public:
   GamePieceGenerator();
+
+  static Enemy* generateEnemy();
+  static std::string generateRandomName();
 };
 
 
