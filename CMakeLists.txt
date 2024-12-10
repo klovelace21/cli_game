@@ -14,7 +14,6 @@ add_executable(cli_game main.cpp
         Classes/AbilityBook/AbilityBook.cpp
         Classes/GameManager/GameManager.cpp
         Classes/Exit/Exit.cpp
-        Classes/GamePieceGenerator/GamePieceGenerator.cpp
         Globals/Globals.cpp)
 
 

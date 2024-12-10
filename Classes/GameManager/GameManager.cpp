@@ -138,7 +138,7 @@ void GameManager::seed(Player* player, Exit* exit) {
       if (i == exit->getRow() && j == exit->getColumn()) {
         continue;
       }
-      Enemy* enemy = new Enemy(i,j, "Gorlock", 15);
+      Enemy* enemy = new Enemy(i,j);
       board[i][j] = enemy;
     }
   }
