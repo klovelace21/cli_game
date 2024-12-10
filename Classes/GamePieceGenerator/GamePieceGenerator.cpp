@@ -21,8 +21,13 @@ std::string GamePieceGenerator::epithets[30] = {
     "The Bonecrusher", "The Flamecaller", "The Frostborn", "The Stormbringer",
     "The Nightfall", "The Ironhide", "The Lifetaker", "The Kingslayer", "The Deathdealer"
 };
-
 GamePieceGenerator::GamePieceGenerator() {}
+
+Enemy* GamePieceGenerator::generateEnemy(int _row, int _column) {
+    std::string enemyName = generateRandomName();
+    Enemy* enemy = new Enemy(_row,_column, enemyName, (20 * (rand() % 6)));
+    return enemy;
+}
 
 std::string GamePieceGenerator::generateRandomName() {
   std::string name = names[rand() % 30];
