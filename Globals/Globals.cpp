@@ -7,4 +7,5 @@
 namespace Globals {
     int BOARD_HEIGHT = 10;
     int BOARD_WIDTH = 10;
+    enum TYPE { HEAL, DAMAGE, BUFF };
 }
