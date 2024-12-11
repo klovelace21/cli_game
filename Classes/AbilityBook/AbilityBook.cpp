@@ -6,8 +6,8 @@
 std::string craftName(Ability* toLearn) {
   return "Book of " + toLearn->getName();
 }
-AbilityBook::AbilityBook(int _row, int _column, Ability* _toLearn)
-    : Item(_row, _column, craftName(_toLearn), true),
+AbilityBook::AbilityBook(Ability* _toLearn)
+    : Item(craftName(_toLearn), true),
     toLearn(_toLearn) {}
 
 std::string AbilityBook::getEffect() const {

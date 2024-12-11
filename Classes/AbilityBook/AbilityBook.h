@@ -12,7 +12,7 @@ class AbilityBook : public Item {
 private:
   Ability* toLearn;
 public:
-  AbilityBook(int _row, int _column, Ability* _toLearn);
+  AbilityBook(Ability* _toLearn);
   std::string getEffect() const override;
 };
 
