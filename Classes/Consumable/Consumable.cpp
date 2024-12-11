@@ -9,8 +9,8 @@ bool checkUsableOutOfCombat(const std::string &_buffType) {
     }
     return false;
 }
-Consumable::Consumable(int _row, int _column, const std::string &_name, const std::string &_buffType, int _buffAmount)
-    : Item(_row, _column, _name, checkUsableOutOfCombat(_buffType)),
+Consumable::Consumable(const std::string &_name, const std::string &_buffType, int _buffAmount)
+    : Item(_name, checkUsableOutOfCombat(_buffType)),
     buffType(_buffType), buffAmount(_buffAmount) {}
 
 std::string Consumable::getEffect() const {
