@@ -13,8 +13,8 @@ class Enemy : public Character {
   static std::string generateRandomName();
 
 public:
-  Enemy(int _row, int _column, const std::string &_name, int _maxHealthPoints);
-  Enemy(int _row, int _column);
+  Enemy(const std::string &_name, int _maxHealthPoints);
+  Enemy();
 
   void takeDamage(int damage) override;
   void restoreHealthPoints(int toRestore) override;

@@ -23,11 +23,11 @@ std::string Enemy::epithets[30] = {
   "The Nightfall", "The Ironhide", "The Lifetaker", "The Kingslayer", "The Deathdealer"
 };
 
-Enemy::Enemy(int _row, int _column, const std::string &_name, int _maxHealthPoints)
-  : Character(_row, _column, _name, _maxHealthPoints) {}
+Enemy::Enemy(const std::string &_name, int _maxHealthPoints)
+  : Character(_name, _maxHealthPoints) {}
 
-Enemy::Enemy(int _row, int _column)
-  : Character(_row, _column, generateRandomName(), (20 * (rand() % 6))){}
+Enemy::Enemy()
+  : Character(generateRandomName(), (20 * (rand() % 6))){}
 
 std::string Enemy::generateRandomName() {
   std::string name = names[rand() % 30];
