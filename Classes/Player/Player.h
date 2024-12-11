@@ -21,6 +21,7 @@ public:
 
   void takeDamage(int damage) override;
   void restoreHealthPoints(int toRestore) override;
+  void generateAbilities() override;
   int chooseAbility() override;
 
   void changeRow(int changeBy);

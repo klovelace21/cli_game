@@ -6,10 +6,23 @@
 
 
 Player::Player(const std::string &_name, int _maxHealthPoints)
-  : Character(_name, _maxHealthPoints) {}
+  : Character(_name, _maxHealthPoints)
+{
+  generateAbilities();
+}
 
 Player::Player(int _row, int _column, const std::string &_name, int _maxHealthPoints)
-  : Character(_name, _maxHealthPoints), row(_row), column(_column) {}
+  : Character(_name, _maxHealthPoints), row(_row), column(_column)
+{
+  generateAbilities();
+}
+
+void Player::generateAbilities() {
+  setAbility(*new Ability(Globals::Type::DAMAGE, 20),0);
+  setAbility(*new Ability(Globals::Type::DAMAGE), 1);
+  setAbility(*new Ability(Globals::Type::HEALING), 2);
+  setAbility(*new Ability(Globals::Type::BUFF), 3);
+}
 
 Item* Player::chooseItemOutOfCombat() {
   cout << "Which Item would you like to use?" << endl;
@@ -40,7 +53,7 @@ int Player::getColumn() const { return column;}
 int Player::chooseAbility() {
   cout << "Which ability would you like to use?" << endl;
   for (int i = 0; i < sizeof(abilities) / sizeof(abilities[0]); i++) {
-    cout << i + 1 << ". " << abilities[0].toString() << "   ";
+    cout << i + 1 << ". " << abilities[0]->toString() << "   ";
 
     if (i % 2 != 0)
       cout << std::endl;
