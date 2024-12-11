@@ -9,7 +9,7 @@ Player::Player(const std::string &_name, int _maxHealthPoints)
   : Character(_name, _maxHealthPoints) {}
 
 Player::Player(int _row, int _column, const std::string &_name, int _maxHealthPoints)
-  : Character(_row, _column, _name, _maxHealthPoints) {}
+  : Character(_name, _maxHealthPoints), row(_row), column(_column) {}
 
 Item* Player::chooseItemOutOfCombat() {
   cout << "Which Item would you like to use?" << endl;
@@ -33,6 +33,9 @@ Item* Player::chooseItemOutOfCombat() {
   delete usable;
   return toUse;
 }
+
+int Player::getRow() const { return row; }
+int Player::getColumn() const { return column;}
 
 int Player::chooseAbility() {
   cout << "Which ability would you like to use?" << endl;
