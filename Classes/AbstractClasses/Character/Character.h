@@ -24,7 +24,6 @@ public:
   virtual int chooseAbility() = 0;
 
   Character(const std::string &_name, int _maxHealthPoints);
-  Character(int _row, int _column, const std::string &_name, int _maxHealthPoints);
 
   int getCurrentHealthPoints() const;
   Ability* getAbility(int idx);
