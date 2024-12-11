@@ -12,7 +12,7 @@ protected:
 public:
   virtual ~Item() = default;
   virtual std::string getEffect() const = 0;
-  Item(int _row, int _column, const std::string &_name, bool _usableOutOfCombat);
+  Item(const std::string &_name, bool _usableOutOfCombat);
   bool isUsableOutOfCombat() const;
 };
 

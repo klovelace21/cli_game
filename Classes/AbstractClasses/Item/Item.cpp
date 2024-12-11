@@ -4,8 +4,8 @@
 
 #include "Item.h"
 
-Item::Item(int _row, int _column, const std::string &_name, bool _usableOutOfCombat)
-: GamePiece(_row, _column, _name), usableOutOfCombat(_usableOutOfCombat) {}
+Item::Item(const std::string &_name, bool _usableOutOfCombat)
+: GamePiece(_name), usableOutOfCombat(_usableOutOfCombat) {}
 
 bool Item::isUsableOutOfCombat() const {
     return usableOutOfCombat;
