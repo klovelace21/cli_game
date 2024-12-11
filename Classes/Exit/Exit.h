@@ -8,7 +8,7 @@
 
 class Exit : public GamePiece {
 public:
-  Exit(int _row, int _column, const std::string &_name);
+  Exit(const std::string &_name);
 };
 
 
