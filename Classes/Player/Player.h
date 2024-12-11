@@ -12,6 +12,8 @@
 using namespace std;
 class Player : public Character {
 private:
+  int row;
+  int column;
   std::vector<Item*> items;
 public:
   Player(const std::string &_name, int _maxHealthPoints);
@@ -25,6 +27,8 @@ public:
   void changeColumn(int changeBy);
   void addItem(Item* item);
   Item* chooseItemOutOfCombat();
+  int getRow() const;
+  int getColumn() const;
 };
 
 

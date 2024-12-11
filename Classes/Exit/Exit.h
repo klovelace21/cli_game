@@ -7,8 +7,13 @@
 #include "../AbstractClasses/GamePiece/GamePiece.h"
 
 class Exit : public GamePiece {
+  int row;
+  int column;
 public:
-  Exit(const std::string &_name);
+  Exit(int _row, int _column, const std::string &_name);
+
+  int getRow() const;
+  int getColumn() const;
 };
 
 

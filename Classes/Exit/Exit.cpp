@@ -4,5 +4,13 @@
 
 #include "Exit.h"
 
-Exit::Exit(const std::string &_name)
-    : GamePiece(_name) {}
+Exit::Exit(int _row, int _column, const std::string &_name)
+    : GamePiece(_name), row(_row), column(_column) {}
+
+int Exit::getRow() const {
+    return row;
+}
+
+int Exit::getColumn() const {
+    return column;
+}

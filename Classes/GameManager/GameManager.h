@@ -16,7 +16,9 @@ class GameManager {
 private:
   inline static GamePiece* board[10][10];
   inline static set<tuple<int, int>> visited;
-
+  // Implement usage after removing rows / cols
+  inline static set<tuple<int, int>> enemies;
+  inline static set<tuple<int, int>> items;
 public:
   GameManager();
 

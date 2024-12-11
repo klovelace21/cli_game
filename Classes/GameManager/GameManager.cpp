@@ -105,6 +105,7 @@ void GameManager::displayMoveOptions() {
 void GameManager::playerMove(Player* player) {
   printBoard(player);
   displayMoveOptions();
+  // Move this to Player Bool: movedSuccessfully ? Or try / catch
   int choice;
   cout << "\n";
   cin >> choice;
@@ -138,7 +139,7 @@ void GameManager::seed(Player* player, Exit* exit) {
       if (i == exit->getRow() && j == exit->getColumn()) {
         continue;
       }
-      Enemy* enemy = new Enemy(i,j);
+      Enemy* enemy = new Enemy();
       board[i][j] = enemy;
     }
   }
