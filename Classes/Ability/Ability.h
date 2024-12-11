@@ -12,11 +12,11 @@
 using namespace std;
 class Ability {
 private:
+  static map<Globals::Type, vector<string>> abilityPool;
   const Globals::Type type;
   std::string name;
   int effectAmount;
 public:
-  static map<Globals::Type, vector<string>> abilityPool;
   Ability();
   Ability(Globals::Type _type, const std::string &_name, int _damage);
   Ability(Globals::Type _type);

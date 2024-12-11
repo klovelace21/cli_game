@@ -10,7 +10,7 @@ Ability::Ability(const Globals::Type _type, const std::string &_name, int _effec
     : name(_name), effectAmount(_effectAmount), type(_type) {}
 
 Ability::Ability(Globals::Type _type)
-    : name(abilityPool.at(_type).at(rand() % 20)), effectAmount(5 * (rand() % 5)), type(_type) {}
+    : name(abilityPool.at(_type).at(rand() % 20)), effectAmount(max(10, 5 * (rand() % 5))), type(_type) {}
 
 
 std::string Ability::getName() const { return name; }
