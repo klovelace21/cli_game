@@ -13,7 +13,7 @@ class Character : public GamePiece {
 protected:
   int maxHealthPoints;
   int currentHealthPoints;
-  Ability abilities[4];
+  Ability* abilities[4];
 
   void checkIfValidIndex(int idx) const;
 
@@ -22,13 +22,13 @@ public:
   virtual void takeDamage(int damage) = 0;
   virtual void restoreHealthPoints(int toRestore) = 0;
   virtual int chooseAbility() = 0;
-
   Character(const std::string &_name, int _maxHealthPoints);
 
   int getCurrentHealthPoints() const;
   Ability* getAbility(int idx);
-  void setAbility(const Ability &newAbility, int idx);
+  void setAbility(Ability &newAbility, int idx);
   void useAbility(int idx, Character *character);
+
 };
 
 
