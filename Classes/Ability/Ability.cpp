@@ -9,14 +9,15 @@ Ability::Ability() : name("Basic Attack"), effectAmount(10), type(Globals::Type:
 Ability::Ability(const Globals::Type _type, const std::string &_name, int _effectAmount)
     : name(_name), effectAmount(_effectAmount), type(_type) {}
 
+Ability::Ability(Globals::Type _type, int effectAmount)
+    : name(abilityPool.at(_type).at(rand() % 20)), type(_type), effectAmount(effectAmount){}
+
 Ability::Ability(Globals::Type _type)
-    : name(abilityPool.at(_type).at(rand() % 20)), effectAmount(max(10, 5 * (rand() % 5))), type(_type) {}
+    : name(abilityPool.at(_type).at(rand() % 20)), effectAmount(max(10, 5 * (rand() % 6))), type(_type) {}
 
 
 std::string Ability::getName() const { return name; }
-
 int Ability::getEffectAmount() const { return effectAmount; }
-
 Globals::Type Ability::getType() const { return type; }
 
 // change later

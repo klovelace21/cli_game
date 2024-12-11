@@ -18,8 +18,10 @@ private:
   int effectAmount;
 public:
   Ability();
-  Ability(Globals::Type _type, const std::string &_name, int _damage);
+  Ability(Globals::Type _type, const std::string &_name, int _effectAmount);
+  Ability(Globals::Type _type, int _effectAmount);
   Ability(Globals::Type _type);
+
 
   std::string getName() const;
   std::string toString() const;
