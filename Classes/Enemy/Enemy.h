@@ -19,7 +19,7 @@ public:
   void takeDamage(int damage) override;
   void restoreHealthPoints(int toRestore) override;
   int chooseAbility() override;
-
+  void generateAbilities();
 };
 
 

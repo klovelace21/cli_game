@@ -27,12 +27,22 @@ Enemy::Enemy(const std::string &_name, int _maxHealthPoints)
   : Character(_name, _maxHealthPoints) {}
 
 Enemy::Enemy()
-  : Character(generateRandomName(), (20 * (rand() % 6))){}
+  : Character(generateRandomName(), (20 * (rand() % 6))) {
+  generateAbilities();
+
+}
 
 std::string Enemy::generateRandomName() {
   std::string name = names[rand() % 30];
   std::string epithet = epithets[rand() % 30];
   return name + " " + epithet;
+}
+
+void Enemy::generateAbilities() {
+  for (int i = 0; i < 4; i++) {
+    Ability* ability = new Ability(Globals::Type::DAMAGE);
+    setAbility(*ability, i);
+  }
 }
 
 void Enemy::takeDamage(int damage) {
