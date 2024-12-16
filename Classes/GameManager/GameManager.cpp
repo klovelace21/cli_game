@@ -3,6 +3,9 @@
 //
 
 #include "GameManager.h"
+
+#include <chrono>
+#include <random>
 GameManager::GameManager() {}
 
 void GameManager::startTurn(Player* player) {
@@ -10,6 +13,10 @@ void GameManager::startTurn(Player* player) {
 }
 
 Character* GameManager::handleBattle(Character* c1, Character* c2) {
+  /*
+   * cout Ability Type, work on Ability toString
+   * cout what Ability each Character uses / how much dmg taken / given
+   */
   // While there is no winner, continue battling
   while (!winnerExists(c1, c2)) {
     attack(c1, c2);
@@ -46,7 +53,7 @@ bool GameManager::winnerExists(const Character* c1, const Character* c2) {
 
 void GameManager::attack(Character* attacker, Character* target) {
   Ability* abilityToUse = attacker->getAbility(attacker->chooseAbility());
-  target->takeDamage(abilityToUse->getDamage());
+  target->takeDamage(abilityToUse->getEffectAmount());
 }
 
 void GameManager::printBoard(const Player* player) {
@@ -151,4 +158,37 @@ void GameManager::seed(Player* player, Exit* exit) {
 
     }
   }
+}
+
+vector<GamePiece*> GameManager::seedRow(bool playerOrExit) {
+  vector<GamePiece*> row;
+  int toFill = playerOrExit ? Globals::BOARD_WIDTH : Globals::BOARD_WIDTH - 1;
+  int idx = 0;
+  while (idx < toFill - 2) {
+    row.push_back(new Enemy());
+    idx += 1;
+  }
+  // Change w/ buff eventually
+  int consumableType = rand() % 2;
+  Globals::Type type;
+  switch (consumableType) {
+    case 0:
+      type = Globals::Type::DAMAGE;
+      break;
+    case 1:
+      type = Globals::Type::HEALING;
+  }
+  row.push_back(new Consumable(type));
+  int abilityBookType = rand() % 2;
+  switch (abilityBookType) {
+    case 0:
+      type = Globals::Type::DAMAGE;
+      break;
+    case 1:
+      type = Globals::Type::HEALING;
+  }
+  row.push_back(new AbilityBook(new Ability(type)));\
+  unsigned randomSeed = chrono::system_clock::now().time_since_epoch().count();
+  shuffle(row.begin(), row.end(), default_random_engine(randomSeed));
+  return row;
 }

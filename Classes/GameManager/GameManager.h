@@ -8,9 +8,13 @@
 #include "../AbstractClasses/Character/Character.h"
 #include "../Player/Player.h"
 #include "../Exit/Exit.h"
+#include "../Consumable/Consumable.h"
+#include "../AbilityBook/AbilityBook.h"
 #include "../Enemy/Enemy.h"
 #include "../../Globals/Globals.h"
 #include <set>
+#include <stack>
+#include <algorithm>
 using namespace std;
 class GameManager {
 private:
@@ -19,8 +23,9 @@ private:
   // Implement usage after removing rows / cols
   inline static set<tuple<int, int>> enemies;
   inline static set<tuple<int, int>> items;
+
 public:
-  GameManager();
+    GameManager();
 
   static void startTurn(Player* player);
   static Character* handleBattle(Character* c1, Character* c2);
@@ -32,7 +37,7 @@ public:
   static bool winnerExists(const Character* c1, const Character* c2);
   static void attack(Character* attacker, Character* target);
   static void seed(Player* player, Exit* exit);
-
+  static vector<GamePiece*> seedRow(bool playerOrExit);
 };
 
 #endif //GAMEMANAGER_H
