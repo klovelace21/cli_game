@@ -38,8 +38,11 @@ std::string Enemy::generateRandomName() {
   return name + " " + epithet;
 }
 
+// Give Enemy at least one healing and (buff ability) <- eventually
 void Enemy::generateAbilities() {
-  for (int i = 0; i < 4; i++) {
+  Ability* heal = new Ability(Globals::Type::HEALING);
+  setAbility(*heal, 3);
+  for (int i = 0; i < 3; i++) {
     Ability* ability = new Ability(Globals::Type::DAMAGE);
     setAbility(*ability, i);
   }
@@ -57,6 +60,11 @@ void Enemy::restoreHealthPoints(int toRestore) {
   }
 }
 
+// If the ability chosen is HEALING, reroll if maxHP
 int Enemy::chooseAbility() {
-  return rand() % 4;
+  int abilityIdx = rand() % 4;
+  while (getAbility(abilityIdx)->getType() == Globals::Type::HEALING &&  currentHealthPoints >= maxHealthPoints) {
+    abilityIdx = rand() % 4;
+  }
+  return abilityIdx;
 }
