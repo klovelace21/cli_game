@@ -168,26 +168,8 @@ vector<GamePiece*> GameManager::seedRow(bool playerOrExit) {
     row.push_back(new Enemy());
     idx += 1;
   }
-  // Change w/ buff eventually
-  int consumableType = rand() % 2;
-  Globals::Type type;
-  switch (consumableType) {
-    case 0:
-      type = Globals::Type::DAMAGE;
-      break;
-    case 1:
-      type = Globals::Type::HEALING;
-  }
-  row.push_back(new Consumable(type));
-  int abilityBookType = rand() % 2;
-  switch (abilityBookType) {
-    case 0:
-      type = Globals::Type::DAMAGE;
-      break;
-    case 1:
-      type = Globals::Type::HEALING;
-  }
-  row.push_back(new AbilityBook(new Ability(type)));\
+  row.push_back(new Consumable(Globals::genRandomType()));
+  row.push_back(new AbilityBook(new Ability(Globals::genRandomType())));
   unsigned randomSeed = chrono::system_clock::now().time_since_epoch().count();
   shuffle(row.begin(), row.end(), default_random_engine(randomSeed));
   return row;
